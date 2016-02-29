@@ -1,0 +1,13 @@
+ "dashboard": {
+  "id": null,
+  "title": "{{ datasource }}",
+  "originalTitle": "{{ datasource }}",
+  "tags": ["telegraf"],
+  "style": "dark",
+  "timezone": "browser",
+  "editable": true,
+  "hideControls": false,
+  "sharedCrosshair": {
+    "enable": true
+  },
+
