@@ -30,6 +30,8 @@ class Influxdb(object):
     def __init__(self):
         self.influxdb_user   = args.influxdb_user
         self.influxdb_passwd = args.influxdb_passwd
+        self.influxdb_ssl    = args.influxdb_ssl
+        self.influxdb_verify_ssl    = args.influxdb_verify_ssl
         self.databases       = re.compile(args.databases)
         self.hosts           = []
 
@@ -45,7 +47,9 @@ class Influxdb(object):
        try:
            self.cc = InfluxDBClusterClient(hosts = self.hosts,
                                username=self.influxdb_user,
-                               password=self.influxdb_passwd)
+                               password=self.influxdb_passwd,
+                               ssl=self.influxdb_ssl,
+                               verify_ssl=self.influxdb_verify_ssl)
 
            self.is_connected = CONNECTED
 
@@ -146,6 +150,8 @@ if __name__ == "__main__":
     parser.add_argument('--dashboard-version',required=False,action='store',dest='dash_version',help='Dashboard version to set.',metavar="DASHVERSION",default=0)
     parser.add_argument('--enable-templating',required=False,action='store_true',dest='enable_templating',help='Enable templates',default=False)
     parser.add_argument('--enable-annotations',required=False,action='store_true',dest='enable_annotations',help='Enable annotations',default=False)
+    parser.add_argument('--ssl',required=False,action='store_true',dest='influxdb_ssl',help='Use SSL for InfluxDB connection.',default=False)
+    parser.add_argument('--verify-ssl',required=False,action='store_true',dest='influxdb_verify_ssl',help='Verify SSL when connecting to InfluxDB.',default=False)
     parser.add_argument('-v','--verbose',required=False,action='store_true',dest='verbose',help='Increase output verbosity',default=False)
 
     args = parser.parse_args()
