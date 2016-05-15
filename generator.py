@@ -9,6 +9,7 @@ This class is for generating Telegraf dashboards from Influxdb.
 """
 
 from influxdb import InfluxDBClusterClient
+from influxdb.exceptions import InfluxDBClientError
 import json
 import argparse
 from jinja2 import Environment, FileSystemLoader
