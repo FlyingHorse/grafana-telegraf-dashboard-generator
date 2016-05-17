@@ -50,6 +50,8 @@ optional arguments:
                         Dashboard version to set.
   --enable-templating   Enable templates
   --enable-annotations  Enable annotations
+  --ssl                 Use SSL for InfluxDB connection.
+  --verify-ssl          Verify SSL when connecting to InfluxDB.
   -v, --verbose         Increase output verbosity
 ```
 
