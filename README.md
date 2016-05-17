@@ -67,3 +67,9 @@ Use influxdb version > 2.11.0 and Jinja2> 2.8
 pip install influxdb
 pip install Jinja2
 ```
+
+## Import
+To import the generated dashboards, please use the grafana API:
+```
+curl "http://admin:admin@127.0.0.1:3001/api/dashboards/db" -X POST -H 'Content-Type: application/json;charset=UTF-8' --data-binary @telegraf.json 
+```
