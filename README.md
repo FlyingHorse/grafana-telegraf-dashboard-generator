@@ -2,6 +2,8 @@
 
 This simple script written in python is used to build Grafana json dashboards for Telegraf Metrics.
 
+The full dashboard can be grab from [grafana.net](https://grafana.net/dashboards/61).
+
 ## Main goal
 Sharing Grafana panels for telegraf metrics.
 
